@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Phone Spell</title>
+        
+        <link rel="stylesheet" href="css/jquery.mobile.css">
+        <link rel="stylesheet" href="css/jquery.mobile.structure.css">
+        <link rel="stylesheet" href="css/jquery.mobile.theme.css">
+      
+        <!-- Extra Codiqa features -->
+        <link rel="stylesheet" href="css/codiqa.ext.css">
+        <link rel="stylesheet" href="css/phonespell.css">
+  
+		<script src="phonegap.js"></script>
+		<script src="childbrowser.js"></script>
+      
+        <!-- jQuery and jQuery Mobile -->
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript">
+			$(document).bind('mobileinit',function(){
+				$.mobile.selectmenu.prototype.options.nativeMenu = false;
+				$.support.cors = true;
+				$.mobile.allowCrossDomainPages = true;
+				$.mobile.phonegapNavigationEnabled = true;
+				$.mobile.page.prototype.options.domCache = true;
+				$.mobile.ajaxEnabled=true;
+				$.mobile.pushStateEnabled=true;
+			});
+        </script>
+        <script src="js/jquery.mobile.js"></script>
+        
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/jquery.form.js"></script>
+
+        <!-- Extra Codiqa features -->
+        <script src="js/codiqa.ext.js"></script>
+        <script src="js/snippets.js"></script>
+        <script src="js/phonespell.js"></script>
+    </head>
+    <body>
+    <div id="myPhoneSpell" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h2>Phone Spell</h2>
+            <a data-role="button" href="#phoneChoose" data-icon="search" data-iconpos="notext" class="ui-btn-right">Contacts</a>
+        </div>
+	    <div data-role="content">
+    
+<form id="myPhoneSpellForm"  method="post" action="http://rbadesign.us/myphonespell/ajax/myphonespell.php">
+    <div data-role="fieldcontain">
+        <label for="phone">Your Phone Number/Номер Вашего телефона</label>
+        <input type="text" name="phone" id="phone" class="required" />
+    </div>
+    <div data-role="fieldcontain">
+        <label for="language">Language/Язык</label>
+        <select name="language" id="language" class="required">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+  		</select>
+    </div>
+	<input name="button" type="submit" id="submitter" value="Submit/Отправить" />
+</form>
+
+<div id="myPhoneSpellResult"></div>
+
+    	</div>
+        <div data-role="footer" data-position="fixed">
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 320x50 Mobile Banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:50px"
+     data-ad-client="ca-pub-3043828449774433"
+     data-ad-slot="1198674880"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>    	
+        </div>
+    </div>
+    
+<li class="item-template" data-role='none'>
+    <a id="item-link" data-transition="slide" >
+        <img id="item-image" src="images/image.png" height="80" width="80"/>
+        <h3 id="item-title">
+        </h3>
+        <p id="item-desc" class="ui-li-desc">
+        </p>
+        <p id="item-count" class="ui-li-count">
+        </p>
+    </a>
+</li>
+
+    <div id="phoneChoose" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h2>Phone Spell</h2>
+            <a data-role="button" data-rel="back" data-icon="back" data-iconpos="notext">My Phone Spell</a>
+        </div>
+	    <div data-role="content">
+        
+        <ul data-role="listview" data-inset="false" data-filter="true" class="items">
+        </ul>
+        
+    	</div>
+    </div>
+    </body>
+</html>

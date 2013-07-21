@@ -73,3 +73,12 @@ function contactErrorMessage(error) {
 	}
 	return "";
 }
+
+function openExternalURL(url){
+    navigator.app.loadUrl(url, { openExternal:true });
+    return false;
+} 
+
+$.fn.hasAttr = function(name) {  
+   return (typeof this.attr(name) !== 'undefined' && this.attr(name) !== false);
+};

@@ -49,8 +49,8 @@ $.when(deviceReadyDeferred, jqmReadyDeferred).then(function() {
 	debugWrite('when(deviceReadyDeferred, jqmReadyDeferred).then','end');
 });
 
-$(document).one("pageinit",function(event) {
-	debugWrite("pageinit","one");
+$(document).one("pagebeforechange",function(event) {
+	debugWrite("pagebeforechange","one");
 	jqmReadyDeferred.resolve();
 });
 	

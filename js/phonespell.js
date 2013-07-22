@@ -68,15 +68,13 @@ $(document).on("pageinit","#myPhoneSpell",function(event) {
 			});
 		}
 		return false;
-    });
-	
-	$(this).on("vclick","a",function(event) {
-		if (!$(this).hasAttr("data-role")) {
-			if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
-			openExternalURL($(this).attr("href"));
-			return false;
-		}
-    });
+    });	
+});
+
+$(document).on("vclick","a[target='_blank']",function(event) {
+	if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+	openExternalURL($(this).attr("href"));
+	return false;
 });
 
 // Wait for Cordova to load

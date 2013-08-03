@@ -25,15 +25,19 @@
 				$.support.cors = true;
 				$.mobile.allowCrossDomainPages = true;
 				$.mobile.phonegapNavigationEnabled = true;
-				$.mobile.page.prototype.options.domCache = true;
+				$.mobile.page.prototype.options.domCache = false;
 				$.mobile.ajaxEnabled=true;
 				$.mobile.pushStateEnabled=true;
+				$.mobile.autoInitializePage = false;
 			});
         </script>
         <script src="js/jquery.mobile.js"></script>
         
         <script src="js/jquery.validate.js"></script>
         <script src="js/jquery.form.js"></script>
+
+        <script src="i18n/phonespell.i18n.ru.js"></script>
+        <script src="i18n/phonespell.i18n.en.js"></script>
 
         <!-- Extra Codiqa features -->
         <script src="js/codiqa.ext.js"></script>
